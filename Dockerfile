@@ -2,7 +2,7 @@ FROM balenalib/rpi-raspbian:buster
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	ca-certificates \
-  unbound \
+	unbound \
 && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /usr/local/bin
