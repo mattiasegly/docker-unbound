@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY entrypoint.sh /usr/local/bin
 
-RUN [ "cross-build-start" ]
+RUN [ "cross-build-end" ]
 
 VOLUME /etc/unbound
 EXPOSE 53/tcp 53/udp
