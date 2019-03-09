@@ -3,7 +3,8 @@
 echo "Update unbound trust anchor..."
 unbound-anchor
 
-echo "Write unbound config file..."
+echo "Write unbound config file if it doesn't exist..."
+if [ ! -f /etc/haproxy/haproxy.conf ]; then
 cat > /etc/unbound/unbound.conf << EOF
 server:
   do-daemonize: no
@@ -47,6 +48,7 @@ forward-zone:
   forward-addr: 1.1.1.1@853
   forward-addr: 1.0.0.1@853
 EOF
+fi
 
 echo "Check unbound config file..."
 unbound-checkconf
