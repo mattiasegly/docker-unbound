@@ -4,8 +4,8 @@ echo "Update unbound trust anchor..."
 unbound-anchor
 
 echo "Write unbound config file if it doesn't exist..."
-if [ ! -f /etc/haproxy/haproxy.conf ]; then
-cat > /etc/unbound/unbound.conf << EOF
+if [ ! -f /unbound/unbound.conf ]; then
+cat > /unbound/unbound.conf << EOF
 server:
   do-daemonize: no
   interface: 0.0.0.0
@@ -51,7 +51,7 @@ EOF
 fi
 
 echo "Check unbound config file..."
-unbound-checkconf
+unbound-checkconf /unbound/unbound.conf
 
 echo "Finished! Run container."
 exec "$@"
