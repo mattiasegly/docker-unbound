@@ -12,8 +12,8 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 RUN [ "cross-build-end" ]
 
-VOLUME /etc/unbound
+VOLUME /unbound
 EXPOSE 53/tcp 53/udp
 
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["unbound"]
+CMD ["unbound", "-c", "/unbound/unbound.conf"]
