@@ -1,5 +1,4 @@
 FROM balenalib/rpi:buster
-
 RUN [ "cross-build-start" ]
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
