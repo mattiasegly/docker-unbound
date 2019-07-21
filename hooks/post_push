@@ -1,0 +1,19 @@
+#!/bin/bash
+
+docker manifest create \
+	$DOCKER_REPO \
+	$DOCKER_REPO:amd64 \
+	$DOCKER_REPO:arm
+
+for ARCH in amd64 arm
+do
+docker manifest annotate \
+	$DOCKER_REPO \
+	$DOCKER_REPO:$ARCH --os linux --arch $ARCH
+done
+
+docker manifest push --purge \
+	$DOCKER_REPO
+
+docker manifest inspect \
+	$DOCKER_REPO
