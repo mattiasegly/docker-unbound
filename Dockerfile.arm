@@ -1,4 +1,4 @@
-FROM balenalib/rpi:buster
+FROM balenalib/rpi-raspbian:buster
 RUN [ "cross-build-start" ]
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
