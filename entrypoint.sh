@@ -53,5 +53,8 @@ fi
 echo "Check unbound config file..."
 unbound-checkconf /unbound/unbound.conf
 
+echo "Overwrite resolv.conf to clear Docker Swarm DNS..."
+echo "nameserver 127.0.0.1" > /etc/resolv.conf
+
 echo "Finished! Run container."
 exec "$@"
