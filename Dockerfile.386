@@ -1,5 +1,4 @@
-FROM mattiasegly/base-image:buster-arm
-RUN [ "cross-build-start" ]
+FROM mattiasegly/base-image:buster-386
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	unbound \
@@ -7,8 +6,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
-
-RUN [ "cross-build-end" ]
 
 VOLUME /unbound
 EXPOSE 53/tcp 53/udp
