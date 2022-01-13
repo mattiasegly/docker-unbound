@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCKER_REPO=mattiasegly/rpi-unbound
-SOURCE_BRANCH=buster
+SOURCE_BRANCH=bullseye
 
 #Pull base images
 for ARCH in amd64 386 arm

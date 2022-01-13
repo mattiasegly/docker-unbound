@@ -1,4 +1,4 @@
-FROM mattiasegly/base-image:buster-arm
+FROM mattiasegly/base-image:bullseye-arm
 RUN [ "cross-build-start" ]
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -1,4 +1,4 @@
-FROM mattiasegly/base-image:buster-amd64
+FROM mattiasegly/base-image:bullseye-amd64
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	unbound \

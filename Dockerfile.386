@@ -1,4 +1,4 @@
-FROM mattiasegly/base-image:buster-386
+FROM mattiasegly/base-image:bullseye-386
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	unbound \
