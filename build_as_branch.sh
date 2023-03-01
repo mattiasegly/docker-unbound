@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCKER_REPO=mattiasegly/rpi-unbound
-SOURCE_BRANCH=bullseye
+SOURCE_BRANCH=bookworm
 
 #Setup multiarch builds
 docker pull multiarch/qemu-user-static:latest
