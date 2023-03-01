@@ -52,6 +52,6 @@ docker manifest push --purge \
 #Clean up
 for ARCH in amd64 i386 arm32v6 arm32v7 arm64v8
 do
-docker image rm $ARCH/debian:$SOURCE_BRANCH
+docker image rm $DOCKER_REPO:$SOURCE_BRANCH-$ARCH
 done
 docker image prune -f
