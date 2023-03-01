@@ -1,5 +1,6 @@
 ARG ARCH=
-FROM mattiasegly/base-image:bullseye-${ARCH}
+ARG SOURCE_BRANCH=
+FROM mattiasegly/base-image:${SOURCE_BRANCH}-${ARCH}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	unbound \
